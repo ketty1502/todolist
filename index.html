@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily To-Do App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="dark">
+  <!-- LOGIN / SIGN UP -->
+  <div id="auth-container" class="container">
+    <h2>Login / Sign Up</h2>
+    <input type="text" id="username" placeholder="Username"/>
+    <input type="password" id="password" placeholder="Password"/>
+    <button onclick="login()">Login</button>
+    <button onclick="signup()">Sign Up</button>
+  </div>
+
+  <!-- SETUP DAILY TASKS -->
+  <div id="setup-container" class="container hidden">
+    <h2>Set Your Daily Tasks</h2>
+    <p>Add the tasks you want to repeat every day:</p>
+    <div id="daily-task-list"></div>
+    <div class="add-task">
+      <input type="text" id="daily-task-input" placeholder="Enter daily task"/>
+      <button onclick="addDailyTask()">+</button>
+    </div>
+    <button onclick="saveDailyTasks()">Save Daily Tasks</button>
+  </div>
+
+  <!-- MAIN DASHBOARD -->
+  <div id="todo-container" class="container hidden">
+    <div class="header">
+      <h2 id="welcome"></h2>
+      <div class="actions">
+        <button onclick="toggleTheme()" id="theme-toggle">Toggle Theme</button>
+        <input type="date" id="date-picker" onchange="loadTasksByDate()"/>
+      </div>
+    </div>
+
+    <div id="task-list"></div>
+
+    <div class="add-task">
+      <input type="text" id="task-input" placeholder="Add a new task for this day"/>
+      <button onclick="addTask()">+</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
