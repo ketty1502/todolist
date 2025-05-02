@@ -49,6 +49,7 @@ body {
   .task-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 5px 0;
   }
   
@@ -67,10 +68,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   
   .hidden {
     display: none;
+  }
+  
+  .delete-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: red;
   }
   
   body.light button {
